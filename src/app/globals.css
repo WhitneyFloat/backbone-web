@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+
+  --color-primary-heading: #1A202C;
+  --color-body-text: #4A5568;
+  --color-muted-text: #718096;
+  --color-accent-primary: #667eea;
+  --color-accent-secondary: #4299e1;
+  --color-success: #48bb78;
+  --color-bg-alt: #F9FAFB;
+}
+
+@layer base {
+  body {
+    @apply text-body-text;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight text-primary-heading;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-accent-primary text-white font-bold rounded-lg transition-colors hover:bg-[#5568d3] disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-white border border-[#E2E8F0] text-body-text font-bold rounded-lg transition-colors hover:bg-gray-50 disabled:opacity-50;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e0;
+}
