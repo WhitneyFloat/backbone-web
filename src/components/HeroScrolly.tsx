@@ -41,7 +41,7 @@ export const HeroScrolly = () => {
             <div className="sticky top-0 h-screen overflow-hidden">
                 {/* Canvas Background */}
                 <ScrollyCanvas
-                    totalFrames={240}
+                    totalFrames={231}
                     framePath="/frames/ezgif-frame-"
                     frameExtension=".png"
                     containerRef={containerRef}
