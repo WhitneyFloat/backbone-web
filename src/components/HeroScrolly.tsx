@@ -59,10 +59,10 @@ export const HeroScrolly = () => {
                         <div className="h-full grid grid-cols-1 lg:grid-cols-3 items-center">
                             {/* Left Side Content */}
                             <div className="lg:col-span-1 space-y-8 pl-4 md:pl-8 lg:pl-12">
-                                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-[0.9] tracking-tighter">
+                                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-[1.1] tracking-tighter">
                                     Your Business. <br />
                                     One App. <br />
-                                    <span className="text-accent-primary">Complete Control.</span>
+                                    <span className="text-accent-primary block mt-4">Complete Control.</span>
                                 </h1>
                                 <p className="text-xl md:text-2xl text-body-text mb-6 leading-relaxed italic font-serif">
                                     Custom mobile apps built for service businesses who are tired of
@@ -135,7 +135,7 @@ export const HeroScrolly = () => {
                             Watch Your <br />
                             <span className="text-accent-primary">Business Transform</span>
                         </h2>
-                        <p className="text-2xl md:text-3xl text-body-text leading-relaxed font-serif italic max-w-2xl px-8 bg-white/40 backdrop-blur-2xl py-8 rounded-[2.5rem] border border-white/60 shadow-xl shadow-gray-200/50">
+                        <p className="text-xl md:text-2xl text-body-text leading-relaxed font-serif italic max-w-2xl px-10 bg-white/40 backdrop-blur-2xl py-6 rounded-[2.5rem] border border-white/60 shadow-xl shadow-gray-200/50">
                             Every tool you need, absorbed into one system.
                             seamless service delivery.
                         </p>
@@ -148,7 +148,7 @@ export const HeroScrolly = () => {
                     >
                         {/* Header pushed higher */}
                         <div className="space-y-4">
-                            <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-none">
+                            <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-none">
                                 One System. <br />
                                 Complete Control. <br />
                                 <span className="text-accent-primary">Actual Results.</span>
