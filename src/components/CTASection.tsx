@@ -14,7 +14,7 @@ export const CTASection = () => {
             </div>
 
             <div className="container mx-auto px-4 text-center max-w-5xl relative z-10">
-                <h2 className="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-tight">
+                <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-tighter leading-tight">
                     Stop Losing Money to <br />
                     <span className="text-accent-primary underline decoration-4 underline-offset-8">Operational Chaos</span>
                 </h2>

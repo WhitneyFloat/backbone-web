@@ -34,10 +34,10 @@ export const OutcomesSection = () => {
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="max-w-4xl mb-16 text-left">
-                    <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">
-                        Stop Losing Money to <br />
-                        <span className="text-accent-primary">Operational Chaos.</span>
+                <div className="max-w-4xl mb-16 px-4">
+                    <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter">
+                        What Actually Changes <br />
+                        <span className="text-accent-primary">When You Make the Switch</span>
                     </h2>
                     <p className="text-xl md:text-2xl text-body-text max-w-2xl font-serif italic">
                         These aren't just features—they're the tangible improvements our clients see within the first 30 days.
