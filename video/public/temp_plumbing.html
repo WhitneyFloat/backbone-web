@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Playfair+Display:wght@600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f3b61",
+                        "accent": "#c5a059",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: #f6f7f8;
+        }
+    </style>
+</head>
+
+<body class="font-display">
+    <div class="max-w-6xl mx-auto p-12">
+        <div class="bg-white shadow-2xl rounded-[3rem] overflow-hidden flex min-h-[700px]">
+            <div class="w-2/3 p-12 border-r border-slate-100">
+                <h1 class="text-primary text-5xl font-serif font-bold mb-8">#INV-2847</h1>
+                <div class="grid grid-cols-2 gap-12 mb-12">
+                    <div>
+                        <h3 class="text-accent text-xs font-bold uppercase tracking-widest mb-4">Service Details</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between font-bold"><span>Kitchen Sink
+                                    Repair</span><span>$185</span></div>
+                            <div class="flex justify-between font-bold"><span>Drain Cleaning</span><span>$120</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-accent text-xs font-bold uppercase tracking-widest mb-4">Materials</h3>
+                        <div class="space-y-2 text-sm text-slate-600">
+                            <div class="flex justify-between"><span>Copper Piping</span><span>$45</span></div>
+                            <div class="flex justify-between"><span>PVC Joints</span><span>$12</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="aspect-square bg-slate-100 rounded-2xl overflow-hidden"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJwY2NCicEgKgvyM8AvV9Ask6ZPNvcMt8GFCLorfLVE1M71K627mYk8ahF9TyZiqfNzEcxgiZK09alqUxBxXeBQjoxCvUSlszSEwSVO_x7-80086sNhNY2xo6fOjp7cKOfV_FCvLSNMw8QNsLjlEYfqJYQBkRM2ogEacgKufr8AcVvHtdeWDvJirsPeivYgfIONdN3FjVz0dZ0yUzQB6xVZ9EoKfo9d3x9lDtENn_FxwufKY-o-yXXM3loPRB3SeSK2xPUTo7PJlKH"
+                            class="w-full h-full object-cover"></div>
+                    <div class="aspect-square bg-slate-100 rounded-2xl overflow-hidden"><img
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4hXUjYP6Q5K-aJDWy69NJTmmBlaF1hLf0-G3v3u2-8CeyVQQgpTGq3b52CuyeexH_QhBXgTezRNzBixNnWPPDQrceF3aIDX928UZWEOwWfmdjwNUeBS8rH8lhDWIhBDhWrC8h3XQFDVVr59i780d6LVnN9C3SyqbCU-mzPMaKbXgo0tO7Kov6sbyRX5Ut0y5CPDsmzOVefa_eniHSTgcRHoHYM7-CeON4VsKc555Wr1mVNf-Wkd13hl5_R0cQZnxgU-deseNoBtm3"
+                            class="w-full h-full object-cover"></div>
+                </div>
+            </div>
+            <div class="w-1/3 bg-primary p-12 flex flex-col justify-center text-white">
+                <div class="mb-12">
+                    <p class="text-accent text-xs font-bold uppercase mb-2">Customer</p>
+                    <p class="text-3xl font-serif">Sarah Johnson</p>
+                </div>
+                <div class="space-y-4 border-t border-white/10 pt-8">
+                    <div class="flex justify-between opacity-60"><span>Subtotal</span><span>$362.50</span></div>
+                    <div class="flex justify-between text-4xl font-serif font-bold text-accent">
+                        <span>Total</span><span>$391.50</span></div>
+                </div>
+                <button class="mt-12 bg-accent text-white py-6 rounded-2xl font-black text-lg uppercase shadow-2xl">Send
+                    Invoice</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

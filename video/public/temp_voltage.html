@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { "primary": "#ffd400", "background-dark": "#23200f" },
+                    fontFamily: { "display": ["Plus Jakarta Sans"] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-200 font-display">
+    <div class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkvVRj8lVzgGPtjzjgEkU9-qMCooa1JosjR4ei7osOB0TiTotfwbUMZjT6hctpWrRM_sYfrghR8fImf_xBdIfBmkBD7_Xbnh6yAbgfJdcRHfPExTyrWoRUNMkbHZVq3gGDsTjIACtK1lpODa3iRdU2XGBRjm4yt4H-pPRBnRRjR2cY8HECvbMi8c9IWtgdV_dXLsDmWUUJSEWfnPMrzUZMPwTlslsx6pibSz2uFF0nMlgMYB32uvwwUE9P-9EGZ7LcCIgtQHLR57Vn')">
+    </div>
+    <div class="absolute inset-0 bg-black/10"></div>
+    <div
+        class="absolute top-12 left-12 bg-white p-8 rounded-[2.5rem] shadow-2xl border-2 border-primary flex items-center gap-6">
+        <div class="bg-primary p-3 rounded-2xl"><span class="material-symbols-outlined font-black">bolt</span></div>
+        <div>
+            <h1 class="text-3xl font-black">VOLTAGE DISPATCH</h1>
+            <p class="text-xs font-bold text-slate-500 uppercase">Real-Time Grid Monitoring</p>
+        </div>
+    </div>
+    <div class="absolute bottom-12 left-12 right-12 flex gap-6">
+        <div
+            class="flex-1 bg-white/90 backdrop-blur-3xl p-8 rounded-[3rem] shadow-2xl flex items-center gap-8 border border-white">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaLRaJawQ_BKjuOpEQpIDIgAqiquBGQdCCfcuxNSqIutYX0snVeXqKLW5NDxZLzYCXeJI7Jl_IKemQv7KtKSDEWFVojMKTqcR3515GxkYCpmIlHG9hhqpUs7RX1w_-5TU6bmcNy-cVNGwBmYkRt58dLw8JeQ6a8ojuXYRd6NYjk1oilGAFNdeHz7_pntplCS5eseZBxdzMbS8OShkXRyKPD_WLwNDCQUg2bDtKKD6KthNFux5BU4b5VB1r6VEpbY3WQccACoAB4b8L"
+                class="size-20 rounded-3xl object-cover border-4 border-primary shadow-lg">
+            <div>
+                <h3 class="text-2xl font-black">James D.</h3>
+                <p class="text-primary font-bold">EN ROUTE • 12 MINS ETA</p>
+            </div>
+        </div>
+        <div class="flex-1 bg-red-600 p-8 rounded-[3rem] shadow-2xl flex items-center gap-8 text-white">
+            <div class="size-20 bg-white/20 rounded-3xl flex items-center justify-center animate-pulse"><span
+                    class="material-symbols-outlined text-4xl">emergency</span></div>
+            <div>
+                <h3 class="text-2xl font-black">EMERGENCY DISPATCH</h3>
+                <p class="font-bold opacity-80">Unit #101 • Power Outage</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

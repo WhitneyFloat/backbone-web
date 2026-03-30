@@ -75,7 +75,7 @@ export const FeaturesSection = () => {
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-4xl mb-16 text-left">
-                    <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter">
+                    <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter">
                         Everything You Need. <br />
                         <span className="text-accent-primary">Nothing You Don't.</span>
                     </h2>

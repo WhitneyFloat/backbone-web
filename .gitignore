@@ -38,4 +38,10 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+# video walkthrough frames (ignore thousands of PNGs, they'll be generated on build or manually uploaded)
+/public/walkthrough/
+
+# remotion video project
+/video/node_modules
+/video/out
+/video/build

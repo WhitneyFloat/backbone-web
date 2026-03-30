@@ -35,14 +35,14 @@ export const FAQSection = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section id="faq" className="py-24 bg-white relative overflow-hidden">
             {/* Background decorative elements */}
             <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-accent-primary/5 rounded-full blur-[80px] -translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[80px] translate-x-1/2 translate-y-1/2" />
 
             <div className="container mx-auto px-4 max-w-4xl relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter">
+                    <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter">
                         Questions We Hear From <br />
                         <span className="text-accent-primary underline decoration-4 underline-offset-8">Smart Business Owners</span>
                     </h2>

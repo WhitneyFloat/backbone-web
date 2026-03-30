@@ -30,8 +30,23 @@ export const Footer = () => {
                     <div>
                         <h4 className="text-lg font-bold mb-6 text-primary-heading font-serif italic">Resources</h4>
                         <ul className="space-y-3 text-body-text font-medium italic">
-                            {["How It Works", "Pricing Guide", "Implementation Process", "FAQ"].map((link, i) => (
-                                <li key={i}><a href="#" className="hover:text-accent-primary transition-colors underline-offset-4 hover:underline">{link}</a></li>
+                            {[
+                                { label: "Initiate my build", href: "https://buy.stripe.com/5kQaEXegFdsE76fddd0Jq00", isExternal: true },
+                                { label: "How It Works", href: "#how-it-works" },
+                                { label: "Pricing Guide", href: "#pricing" },
+                                { label: "Implementation Process", href: "#process" },
+                                { label: "FAQ", href: "#faq" }
+                            ].map((link, i) => (
+                                <li key={i}>
+                                    <a 
+                                        href={link.href} 
+                                        target={link.isExternal ? "_blank" : undefined}
+                                        rel={link.isExternal ? "noopener noreferrer" : undefined}
+                                        className="hover:text-accent-primary transition-colors underline-offset-4 hover:underline"
+                                    >
+                                        {link.label}
+                                    </a>
+                                </li>
                             ))}
                         </ul>
                     </div>
@@ -40,9 +55,21 @@ export const Footer = () => {
                     <div>
                         <h4 className="text-lg font-bold mb-6 text-primary-heading font-serif italic">Company</h4>
                         <ul className="space-y-3 text-body-text font-medium italic">
-                            {["About Us", "Our Process", "Contact", "Book a Call", "Privacy Policy", "Terms of Service"].map((link, i) => (
-                                <li key={i}><a href="#" className="hover:text-accent-primary transition-colors underline-offset-4 hover:underline">{link}</a></li>
-                            ))}
+                            {["About Us", "Our Process", "Contact", "Book a Call", "Privacy Policy", "Terms of Service"].map((link, i) => {
+                                const isBooking = link === "Book a Call" || link === "Contact";
+                                return (
+                                    <li key={i}>
+                                        <a
+                                            href={isBooking ? "https://calendly.com/whitneywilson1227/30min" : "#"}
+                                            target={isBooking ? "_blank" : undefined}
+                                            rel={isBooking ? "noopener noreferrer" : undefined}
+                                            className="hover:text-accent-primary transition-colors underline-offset-4 hover:underline"
+                                        >
+                                            {link}
+                                        </a>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </div>
                 </div>

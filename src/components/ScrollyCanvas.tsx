@@ -123,15 +123,27 @@ export const ScrollyCanvas = ({
     }, [images, frameIndex]);
 
     return (
-        <motion.canvas
-            ref={canvasRef}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isLoaded ? (opacity ? opacity.get() : 1) : 0 }}
-            style={{
-                opacity,
-                mixBlendMode: 'multiply' // Blends the light gray frame background with the white page
-            }}
-            className="absolute inset-0 w-full h-full pointer-events-none"
-        />
+        <div className="absolute inset-0 w-full h-full pointer-events-none">
+            {/* Fallback image for instant load */}
+            {!isLoaded && (
+                <img
+                    src={`${framePath}001${frameExtension}`}
+                    alt="Backbone App Preview"
+                    className="absolute inset-0 w-full h-full object-contain mix-blend-multiply"
+                    style={{ opacity: opacity ? opacity.get() : 1 }}
+                />
+            )}
+
+            <motion.canvas
+                ref={canvasRef}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isLoaded ? 1 : 0 }}
+                style={{
+                    opacity,
+                    mixBlendMode: 'multiply'
+                }}
+                className="absolute inset-0 w-full h-full"
+            />
+        </div>
     );
 };

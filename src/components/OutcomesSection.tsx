@@ -35,7 +35,7 @@ export const OutcomesSection = () => {
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-4xl mb-16 px-4">
-                    <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter">
+                    <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter">
                         What Actually Changes <br />
                         <span className="text-accent-primary">When You Make the Switch</span>
                     </h2>

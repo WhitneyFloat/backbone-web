@@ -18,7 +18,12 @@
     @apply text-body-text;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-sans font-bold tracking-tight text-primary-heading;
   }
 }
@@ -49,4 +54,146 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #cbd5e0;
+}
+
+@font-face {
+  font-family: 'Acknowledgement';
+  src: url('/fonts/Acknowledgement.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Snowball Spinner (Jon Kantner) - Scoped to avoid conflicts */
+.pl {
+  --pl-hue: 223;
+  --pl-bg: hsl(var(--pl-hue), 10%, 90%);
+  --pl-fg: hsl(var(--pl-hue), 10%, 10%);
+  --pl-trans-dur: 0.3s;
+  display: block;
+  position: relative;
+  width: 8em;
+  height: 8em;
+}
+
+.pl__outer-ring,
+.pl__inner-ring,
+.pl__track-cover {
+  position: absolute;
+}
+
+.pl__outer-ring {
+  box-shadow: 1.25em 0.5em 1.25em hsl(0, 0%, 100%) inset, -1.25em -0.5em 1.25em hsl(0, 0%, 0%) inset;
+  width: 100%;
+  height: 100%;
+}
+
+.pl__inner-ring {
+  box-shadow: 0.625em 0.25em 0.625em hsl(0, 0%, 100%) inset, -0.625em -0.25em 0.625em hsl(0, 0%, 0%) inset;
+  top: 1.875em;
+  left: 1.875em;
+  width: 4.25em;
+  height: 4.25em;
+}
+
+.pl__outer-ring,
+.pl__inner-ring {
+  background: hsl(var(--pl-hue), 10%, 90%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ringOpacity 5s steps(1) infinite;
+}
+
+.pl__track-cover {
+  background: linear-gradient(hsl(var(--pl-hue), 10%, 90%) 50%, hsl(var(--pl-hue), 10%, 90%) 0);
+  width: 100%;
+  height: 50%;
+}
+
+.pl__ball {
+  animation: ballMove 5s linear infinite;
+  position: absolute;
+  top: 0.75em;
+  left: 0.75em;
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.pl__ball-texture,
+.pl__ball-outer-shadow,
+.pl__ball-inner-shadow,
+.pl__ball-side-shadows {
+  border-radius: 50%;
+  position: absolute;
+}
+
+.pl__ball-texture {
+  animation: ballTexture 5s linear infinite;
+  background: radial-gradient(circle, #fff 40%, #e0e0e0 100%);
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+}
+
+.pl__ball-outer-shadow {
+  animation: ballOuterShadow 5s linear infinite;
+  box-shadow: 0.125em 0.125em 0.25em hsl(0, 0%, 0%);
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.pl__ball-inner-shadow {
+  box-shadow: 0.25em 0.125em 0.375em hsl(0, 0%, 0%) inset, -0.125em -0.125em 0.375em hsl(0, 0%, 100%) inset;
+  width: 100%;
+  height: 100%;
+}
+
+.pl__ball-side-shadows {
+  background: linear-gradient(90deg, hsla(0, 0%, 0%, 0.3) 20%, hsla(0, 0%, 0%, 0) 35%, hsla(0, 0%, 0%, 0) 65%, hsla(0, 0%, 0%, 0.3) 80%);
+  width: 100%;
+  height: 100%;
+}
+
+/* Animations */
+@keyframes ballMove {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes ballOuterShadow {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-1turn);
+  }
+}
+
+@keyframes ballTexture {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes ringOpacity {
+
+  from,
+  to {
+    opacity: 0;
+  }
+
+  33.3%,
+  66.6% {
+    opacity: 1;
+  }
 }

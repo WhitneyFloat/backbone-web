@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#53d059",
+                        "primary-dark": "#2e7d32",
+                        "accent-olive": "#558b2f",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#131f14",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .custom-gradient {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+        }
+
+        .grass-gradient {
+            background: linear-gradient(90deg, #53d059 0%, #2e7d32 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light font-display text-slate-900 antialiased custom-gradient">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden p-8">
+        <div class="grid grid-cols-2 gap-8">
+            <div>
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="text-primary flex size-12 items-center justify-center bg-primary/10 rounded-xl">
+                        <span class="material-symbols-outlined text-3xl">eco</span>
+                    </div>
+                    <h2 class="text-primary-dark text-2xl font-black">GreenScape</h2>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-white">
+                    <h3 class="text-primary-dark text-sm font-bold uppercase mb-4">Today's Tasks</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 bg-primary/5 p-4 rounded-2xl border border-primary/20">
+                            <div class="size-6 bg-primary rounded flex items-center justify-center text-white"><span
+                                    class="material-symbols-outlined text-sm">check</span></div>
+                            <p class="font-bold">Mow front and back lawn</p>
+                        </div>
+                        <div class="flex items-center gap-4 bg-primary/5 p-4 rounded-2xl border border-primary/20">
+                            <div class="size-6 bg-primary rounded flex items-center justify-center text-white"><span
+                                    class="material-symbols-outlined text-sm">check</span></div>
+                            <p class="font-bold">Edge walkways and driveway</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-white">
+                    <div class="flex justify-between items-end mb-4">
+                        <h3 class="text-primary-dark text-sm font-bold uppercase">Overall Progress</h3>
+                        <p class="text-primary-dark font-black text-2xl">50%</p>
+                    </div>
+                    <div class="w-full bg-slate-100 h-6 rounded-full p-1 border border-slate-200">
+                        <div class="grass-gradient h-full rounded-full w-1/2"></div>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden shadow-2xl h-64 bg-cover bg-center"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAITb5huTA93iUtJ6CB2PupyGDLojMAni5pThrvU2ZXNTz8Rs4dpGyFRCCH8hDWP0YVw40wQDqLOGiaX1XagFgQJnJrgrzBESeEfncMqE2YSRgm6R2dFU7SIgup0QGzJGlFICbcEA1cEa2Br5PL2i0y4-f5zuUYlHzWYWKU41WzaIyt1uWA5yPEOxQnelkBUxoZ51MqdvknjZEw2mtlAzU4secOV0KR29Rn8P1Ou9PrP64pqRS8jMYdkTP-44HJdZYdWNb19UAYUTek')">
+                    <div class="h-full w-full bg-black/40 p-8 flex flex-col justify-end">
+                        <p class="text-white text-2xl font-bold">Martinez Residence</p>
+                        <p class="text-white/80 text-sm">Austin, TX</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
