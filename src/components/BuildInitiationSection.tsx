@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CreditCard, Rocket, ShieldCheck, ArrowRight } from "lucide-react";
+import { LiquidMetalButton } from "./LiquidMetalButton";
 
 export const BuildInitiationSection = () => {
     return (
@@ -40,16 +41,12 @@ export const BuildInitiationSection = () => {
                                 ))}
                             </div>
 
-                            <a 
-                                href="https://buy.stripe.com/5kQaEXegFdsE76fddd0Jq00" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="group relative inline-flex items-center justify-center gap-3 px-8 py-5 bg-accent-primary text-white text-xl font-black rounded-2xl overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-accent-primary/25"
-                            >
-                                <span className="relative z-10">Start Your Project Now</span>
-                                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform relative z-10" />
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
-                            </a>
+                            <LiquidMetalButton 
+                                label="Start Your Project Now" 
+                                width={280}
+                                height={64}
+                                onClick={() => window.open('https://buy.stripe.com/5kQaEXegFdsE76fddd0Jq00', '_blank')}
+                            />
                             
                             <div className="mt-6 flex items-center gap-3 opacity-60 grayscale hover:grayscale-0 transition-all">
                                 <div className="flex -space-x-2">
