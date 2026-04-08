@@ -114,8 +114,8 @@ export const ScrollyCanvas = ({
         <div 
             className="absolute inset-0 w-full h-full pointer-events-none"
             style={{
-                maskImage: 'radial-gradient(circle at center, black 40%, transparent 85%)',
-                WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 85%)'
+                maskImage: 'radial-gradient(circle at center, black 15%, transparent 65%)',
+                WebkitMaskImage: 'radial-gradient(circle at center, black 15%, transparent 65%)'
             }}
         >
             {!isLoaded && (
@@ -125,7 +125,7 @@ export const ScrollyCanvas = ({
                     className="absolute inset-0 w-full h-full object-contain"
                     style={{ 
                         opacity: opacity ? opacity.get() : 1,
-                        filter: 'brightness(1.04) contrast(1.02)'
+                        filter: 'brightness(1.12) contrast(1.1) saturate(1.1)'
                     }}
                 />
             )}
@@ -136,7 +136,7 @@ export const ScrollyCanvas = ({
                 animate={{ opacity: isLoaded ? 1 : 0 }}
                 style={{
                     opacity,
-                    filter: 'brightness(1.04) contrast(1.02)'
+                    filter: 'brightness(1.12) contrast(1.1) saturate(1.1)'
                 }}
                 className="absolute inset-0 w-full h-full"
             />
