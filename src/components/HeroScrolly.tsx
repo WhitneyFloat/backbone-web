@@ -236,7 +236,7 @@ export const HeroScrolly = () => {
                     {/* Scroll Down Indicator */}
                     <motion.div
                         style={{ opacity: scrollIndicatorOpacity }}
-                        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-2"
+                        className="absolute bottom-24 md:bottom-12 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-2"
                     >
                         <motion.div
                             animate={{ y: [0, 8, 0] }}
