@@ -5,10 +5,10 @@ import { useScroll, useTransform, motion, useSpring } from "framer-motion";
 
 interface ScrollyCanvasProps {
     totalFrames: number;
-    framePath: string; // e.g. "/frames/ezgif-frame-"
-    frameExtension: string; // e.g. ".png"
+    framePath: string;
+    frameExtension: string;
     containerRef: React.RefObject<HTMLDivElement | null>;
-    opacity?: any; // MotionValue<number>
+    opacity?: any;
 }
 
 export const ScrollyCanvas = ({
@@ -33,14 +33,12 @@ export const ScrollyCanvas = ({
         restDelta: 0.001,
     });
 
-    // Map progress to frame index
     const frameIndex = useTransform(
         smoothScrollProgress,
         [0, 1],
         [1, totalFrames]
     );
 
-    // Preload images
     useEffect(() => {
         const loadedImages: HTMLImageElement[] = [];
         let loadedCount = 0;
@@ -60,7 +58,6 @@ export const ScrollyCanvas = ({
         }
     }, [totalFrames, framePath, frameExtension]);
 
-    // Draw current frame to canvas
     useEffect(() => {
         const draw = () => {
             const index = Math.floor(frameIndex.get()) - 1;
@@ -71,11 +68,8 @@ export const ScrollyCanvas = ({
             if (canvas && ctx && img) {
                 const logicalWidth = window.innerWidth;
                 const logicalHeight = window.innerHeight;
-
-                // Clear using logical coordinates
                 ctx.clearRect(0, 0, logicalWidth, logicalHeight);
 
-                // Calculate scale to "contain" using logical dimensions
                 const scale = Math.min(
                     logicalWidth / img.width,
                     logicalHeight / img.height
@@ -92,29 +86,23 @@ export const ScrollyCanvas = ({
             if (canvasRef.current) {
                 const canvas = canvasRef.current;
                 const dpr = window.devicePixelRatio || 1;
-
-                // Set logical display size
                 canvas.style.width = window.innerWidth + 'px';
                 canvas.style.height = window.innerHeight + 'px';
-
-                // Set physical pixel size
                 canvas.width = window.innerWidth * dpr;
                 canvas.height = window.innerHeight * dpr;
 
                 const ctx = canvas.getContext('2d');
                 if (ctx) {
-                    // Reset and apply scale
                     ctx.setTransform(1, 0, 0, 1, 0, 0);
                     ctx.scale(dpr, dpr);
                 }
-
                 draw();
             }
         };
 
         const unsub = frameIndex.on("change", draw);
         window.addEventListener("resize", handleResize);
-        handleResize(); // Initial call
+        handleResize();
 
         return () => {
             unsub();
@@ -123,14 +111,22 @@ export const ScrollyCanvas = ({
     }, [images, frameIndex]);
 
     return (
-        <div className="absolute inset-0 w-full h-full pointer-events-none">
-            {/* Fallback image for instant load */}
+        <div 
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            style={{
+                maskImage: 'radial-gradient(circle at center, black 40%, transparent 85%)',
+                WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 85%)'
+            }}
+        >
             {!isLoaded && (
                 <img
                     src={`${framePath}001${frameExtension}`}
                     alt="Backbone App Preview"
-                    className="absolute inset-0 w-full h-full object-contain mix-blend-multiply"
-                    style={{ opacity: opacity ? opacity.get() : 1 }}
+                    className="absolute inset-0 w-full h-full object-contain"
+                    style={{ 
+                        opacity: opacity ? opacity.get() : 1,
+                        filter: 'brightness(1.04) contrast(1.02)'
+                    }}
                 />
             )}
 
@@ -140,7 +136,7 @@ export const ScrollyCanvas = ({
                 animate={{ opacity: isLoaded ? 1 : 0 }}
                 style={{
                     opacity,
-                    mixBlendMode: 'multiply'
+                    filter: 'brightness(1.04) contrast(1.02)'
                 }}
                 className="absolute inset-0 w-full h-full"
             />
