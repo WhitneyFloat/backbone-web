@@ -3,7 +3,7 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 import { ScrollyCanvas } from "./ScrollyCanvas";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronsDown } from "lucide-react";
 import { LiquidMetalButton } from "./LiquidMetalButton";
 
 export const HeroScrolly = () => {
@@ -15,6 +15,9 @@ export const HeroScrolly = () => {
 
     // Final Canvas Fade Out: 98.5-100%
     const canvasOpacity = useTransform(scrollYProgress, [0.985, 1], [1, 0]);
+
+    // Scroll Indicator Opacity: 0-2%
+    const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.02], [1, 0]);
 
     // SEQUENTIAL HEADERS (Beat A: 0-25%)
     const label1X = useTransform(scrollYProgress, [0, 0.02], [100, 0]);
@@ -228,6 +231,25 @@ export const HeroScrolly = () => {
                         <p className="text-lg text-muted-text italic font-serif">
                             15-minute call. Zero pressure. We'll map your exact solution.
                         </p>
+                    </motion.div>
+
+                    {/* Scroll Down Indicator */}
+                    <motion.div
+                        style={{ opacity: scrollIndicatorOpacity }}
+                        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-2"
+                    >
+                        <motion.div
+                            animate={{ y: [0, 8, 0] }}
+                            transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                            className="w-12 h-12 rounded-full border-2 border-slate-300 flex items-center justify-center bg-white/10 backdrop-blur-sm"
+                        >
+                            <ChevronsDown className="w-6 h-6 text-slate-400" />
+                        </motion.div>
+                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 pl-1">Scroll</span>
                     </motion.div>
 
                 </div>
